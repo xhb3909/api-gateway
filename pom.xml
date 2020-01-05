@@ -11,6 +11,7 @@
         <module>ribbon-consumer</module>
         <module>hystrix-dashboard</module>
         <module>fegin-consumer</module>
+        <module>zuul-gateway</module>
     </modules>
 
     <parent>
