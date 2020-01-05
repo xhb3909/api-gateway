@@ -1,6 +1,7 @@
 package com.xhb.controller;
 
 import com.xhb.entity.User;
+import com.xhb.service.HelloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,9 @@ public class ConsumerController {
     @Autowired
     private RestTemplate restTemplate;
 
+    @Autowired
+    private HelloService helloService;
+
     @RequestMapping(value = "/ribbon-consumer", method = RequestMethod.GET)
     public String helloConsumer() {
 
@@ -34,7 +38,7 @@ public class ConsumerController {
 //        URI uri = uriComponents.toUri();
 //        ResponseEntity<String> responseEntity = restTemplate.getForEntity(uri, String.class);
 
-        return restTemplate.getForEntity("http://HELLO-SERVICE/hello", String.class).getBody();
+        return helloService.helloService();
     }
 
     @RequestMapping(value = "/ribbon-consumer", method = RequestMethod.POST)

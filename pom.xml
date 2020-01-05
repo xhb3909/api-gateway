@@ -9,6 +9,7 @@
         <module>eureka-server</module>
         <module>eureka-client</module>
         <module>ribbon-consumer</module>
+        <module>hystrix-dashboard</module>
     </modules>
 
     <parent>
